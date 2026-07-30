@@ -1,0 +1,582 @@
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeae0;
+  color: #1d2a44;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #1d2a44;
+}
+
+section {
+  padding: 80px 24px;
+}
+
+.conteneur {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c1443b;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  background-color: #fffdf8;
+  border-bottom: 2px solid #1d2a44;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1d2a44;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: #c1443b;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav .item {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #1d2a44;
+  cursor: default;
+}
+
+.nav-comptes {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 40px;
+  padding-left: 24px;
+  border-left: 1px solid #d8d3c4;
+}
+
+.compte-item {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #c1443b;
+  cursor: default;
+}
+
+.bouton-principal {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-color: #1d2a44;
+  color: #fffdf8;
+  border: 2px solid #1d2a44;
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.bouton-principal:hover {
+  background-color: #c1443b;
+  border-color: #c1443b;
+}
+
+.bouton-fantome {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-color: transparent;
+  color: #1d2a44;
+  border: 2px solid #1d2a44;
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.bouton-fantome:hover {
+  background-color: #1d2a44;
+  color: #fffdf8;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 90px 24px 60px 24px;
+}
+
+.hero .conteneur {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 46px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #c1443b;
+}
+
+.hero p.intro {
+  font-size: 17px;
+  color: #45516a;
+  max-width: 440px;
+  margin-bottom: 32px;
+}
+
+.hero .actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* ===== Carte d'embarquement (signature visuelle) ===== */
+.carte-embarquement {
+  background-color: #fffdf8;
+  border: 2px solid #1d2a44;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 8px 8px 0 #c1443b;
+}
+
+.ce-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 2px dashed #1d2a44;
+  background-color: #1d2a44;
+  color: #fffdf8;
+  border-radius: 4px 4px 0 0;
+}
+
+.ce-entete .marque {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ce-entete .classe {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #e8cfa0;
+  text-transform: uppercase;
+}
+
+.ce-trajet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 24px 10px 24px;
+}
+
+.ce-trajet .point {
+  text-align: center;
+}
+
+.ce-trajet .ville {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ce-trajet .pays {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b7690;
+}
+
+.ce-trajet .ligne {
+  flex: 1;
+  height: 2px;
+  background-image: linear-gradient(to right, #1d2a44 60%, transparent 0%);
+  background-size: 10px 2px;
+  margin: 0 16px;
+  position: relative;
+}
+
+.ce-trajet .ligne::after {
+  content: "✈";
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #c1443b;
+}
+
+.ce-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 18px 24px 24px 24px;
+}
+
+.ce-details .champ .label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b7690;
+  margin-bottom: 4px;
+}
+
+.ce-details .champ .valeur {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ce-perforation {
+  height: 20px;
+  background-image: radial-gradient(
+    circle at 10px 0px,
+    #eeeae0 8px,
+    transparent 9px
+  );
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+/* ===== Destinations ===== */
+.destinations {
+  background-color: #fffdf8;
+  border-top: 2px solid #1d2a44;
+  border-bottom: 2px solid #1d2a44;
+}
+
+.titre-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.titre-section h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.titre-section p {
+  color: #45516a;
+  font-size: 15px;
+}
+
+.grille-destinations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.tampon {
+  border: 2px dashed #1d2a44;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 150px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.tampon:nth-child(1) {
+  transform: rotate(-4deg);
+  border-color: #c1443b;
+  color: #c1443b;
+}
+.tampon:nth-child(2) {
+  transform: rotate(3deg);
+  border-color: #2c5f8a;
+  color: #2c5f8a;
+}
+.tampon:nth-child(3) {
+  transform: rotate(-2deg);
+  border-color: #c98a2b;
+  color: #c98a2b;
+}
+.tampon:nth-child(4) {
+  transform: rotate(5deg);
+  border-color: #3d7a5c;
+  color: #3d7a5c;
+}
+.tampon:nth-child(5) {
+  transform: rotate(-3deg);
+  border-color: #8a4fa0;
+  color: #8a4fa0;
+}
+.tampon:nth-child(6) {
+  transform: rotate(4deg);
+  border-color: #1d2a44;
+  color: #1d2a44;
+}
+
+.tampon .drapeau {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.tampon .langue {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tampon .ville-tampon {
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.tampon .prix {
+  font-size: 10px;
+  margin-top: 5px;
+  color: #1d2a44;
+  font-weight: 700;
+}
+
+/* ===== Comment ça marche ===== */
+.etapes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.etape {
+  position: relative;
+  padding-left: 54px;
+}
+
+.etape .numero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #1d2a44;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.etape h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.etape p {
+  font-size: 14px;
+  color: #45516a;
+}
+
+/* ===== Temoignages ===== */
+.temoignages {
+  background-color: #1d2a44;
+  color: #fffdf8;
+}
+
+.temoignages .titre-section h2 {
+  color: #fffdf8;
+}
+
+.temoignages .titre-section p {
+  color: #b7c0d6;
+}
+
+.grille-cartes-postales {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.carte-postale {
+  background-color: #fffdf8;
+  color: #1d2a44;
+  border-radius: 3px;
+  padding: 26px;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.carte-postale::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  width: 46px;
+  height: 20px;
+  background-color: rgba(201, 138, 43, 0.55);
+  transform: rotate(-3deg);
+}
+
+.carte-postale p.citation {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.carte-postale .auteur {
+  font-size: 13px;
+  font-weight: 700;
+  border-top: 1px dashed #1d2a44;
+  padding-top: 10px;
+}
+
+.carte-postale .auteur span {
+  display: block;
+  font-weight: 400;
+  color: #6b7690;
+  font-size: 12px;
+}
+
+/* ===== Appel a l'action ===== */
+.cta {
+  text-align: center;
+  background-color: #c1443b;
+  color: #fffdf8;
+}
+
+.cta h2 {
+  color: #fffdf8;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  color: #f6e0da;
+  margin-bottom: 30px;
+}
+
+.cta .bouton-principal {
+  background-color: #fffdf8;
+  color: #c1443b;
+  border-color: #fffdf8;
+}
+
+.cta .bouton-principal:hover {
+  background-color: #1d2a44;
+  color: #fffdf8;
+  border-color: #1d2a44;
+}
+
+/* ===== Pied de page ===== */
+footer {
+  background-color: #fffdf8;
+  border-top: 2px solid #1d2a44;
+  padding: 40px 24px 30px 24px;
+}
+
+footer .conteneur {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer .colonne h3 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+footer .colonne .item {
+  display: block;
+  font-size: 13px;
+  color: #45516a;
+  margin-bottom: 6px;
+}
+
+.bas-de-page {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7690;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #d8d3c4;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero .conteneur {
+    grid-template-columns: 1fr;
+  }
+
+  .grille-destinations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .etapes {
+    grid-template-columns: 1fr;
+  }
+
+  .grille-cartes-postales {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .grille-destinations {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .ce-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer .conteneur {
+    flex-direction: column;
+  }
+}
